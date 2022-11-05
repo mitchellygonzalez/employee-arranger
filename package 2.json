@@ -17,5 +17,11 @@
   "bugs": {
     "url": "https://github.com/mitchellygonzalez/employee-arranger/issues"
   },
-  "homepage": "https://github.com/mitchellygonzalez/employee-arranger#readme"
+  "homepage": "https://github.com/mitchellygonzalez/employee-arranger#readme",
+  "dependencies": {
+    "console.table": "^0.10.0",
+    "inquirer": "^8.2.4",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.3.3"
+  }
 }

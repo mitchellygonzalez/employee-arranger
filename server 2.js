@@ -1,13 +1,12 @@
-const inquirer = require ('inquirer');
-const fs = require ('fs');
-const mysql = require ('mysql2');
-const staff = require('console.table'); // staff is the name of the table check kkad
+const inquirer = require("inquirer");
+const mysql = require("mysql2");
+const staff = require("console.table");
 
 // try removing semicolons after and also check if it works
 
 
 // Connection to database
-const db = mysql.createConnection({
+const connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
     password: 'password',
@@ -15,7 +14,11 @@ const db = mysql.createConnection({
   },
   console.log('Connected to the staff database.')
   );
-
+connection.connect(function (err) {
+    if (err) throw err;
+    console.log("... and SQL is now connected");
+    menu();
+  });
   
   //Start menu of the application
   function menu() {
@@ -194,12 +197,13 @@ function promptUpdateEmployee() {
     });
 }
   
-module.exports = db;
+
 
 
 
 /*
 To start up MySQL, run:  mysql -u root -p 
 
-To start node.js, run: npm init —y
+To start node.js : node server.js
+
 */
