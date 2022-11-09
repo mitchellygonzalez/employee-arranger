@@ -1,3 +1,0 @@
-DROP DATABASE IF EXISTS staff;
-CREATE DATABASE staff;
-USE staff;
