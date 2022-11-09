@@ -2,18 +2,17 @@ const inquirer = require("inquirer");
 const mysql = require("mysql2");
 const staff = require("console.table");
 
-// try removing semicolons after and also check if it works
-
 
 // Connection to database
 const connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
     password: 'password',
-    database: 'staff'
+    database: 'staff',
   },
   console.log('Connected to the staff database.')
   );
+
 connection.connect(function (err) {
     if (err) throw err;
     console.log("... and SQL is now connected");
@@ -22,21 +21,21 @@ connection.connect(function (err) {
   
   //Start menu of the application
   function menu() {
-      inquirer.prompt ({
+      inquirer.prompt ([{
         type: 'list',
         name: 'menu',
         message: 'What would you like to do?',
         choices: ['View all departments', 
                   'View all roles', 
                   'View all employees', 
-                  'Add a deparment', 
+                  'Add a department', 
                   'Add a role', 
                   'Add an employee',
                   'Update an employee',
                   'Exit']
-      })
-      .then(function(res) {
-          switch (res.menu) {
+      },])
+      .then(answer => {
+          switch (answer.menu) {
               case 'View all departments':
                   viewDepartment();
                   break;
@@ -47,6 +46,7 @@ connection.connect(function (err) {
                   viewEmployees();
                   break;
               case 'Add a department':
+                  console.log('adding a department')
                   promptAddDepartment();
                   break;
               case 'Add a role':
@@ -60,13 +60,10 @@ connection.connect(function (err) {
                   break;
               case 'Exit':
                   console.log('Goodbye');
-                  break;
-              default:
-                  console.log('default'); // can change
                   process.exit();
           }
       });
-  };
+  }
 
 //View all departments
 function viewDepartment() {
@@ -96,6 +93,8 @@ function viewEmployees() {
     });
 }
 
+
+
 //Add a department
 function promptAddDepartment () {
     inquirer.prompt([
@@ -118,7 +117,7 @@ function promptAddRole () {
     inquirer.prompt([
         { 
             type: 'input',
-            name: 'role',
+            name: 'title',
             message: 'Enter the name of the role you would like to add:'
         },
         {
@@ -133,7 +132,7 @@ function promptAddRole () {
             message: 'Enter the department id for this role:'
         }
     ]).then(function(res) {
-        connection.query("INSERT INTO role SET ?;", {role: res.role, salary: res.salary, department_id: res.department_id}, function (err, res){
+        connection.query("INSERT INTO role SET ?;", {title: res.title, salary: res.salary, department_id: res.department_id}, function (err, res){
             if(err) throw err;
             console.log('Success! New role was added.');
             menu();
