@@ -4,6 +4,8 @@
 
 ## Table of Contents
 * [Description](#description)
+* [Video Walkthrough](#video-walkthrough)
+* [Screenshots](#screenshots)
 * [User Story](#user-story)
 * [Acceptance Criteria](#acceptance-criteria)
 * [Installation](#installation)
@@ -15,12 +17,25 @@
 ## Description
 Employee-Arranger is an application that allows you to keep track of all of your employees based on their departments and roles. You can add their personal information such as first name, last name, title, salary, and link their manager to their contact. This is a convenient application that alows non-developers to easily view and interact with information stored in a database. This type of interface is called content management systems (CMS). You'll be able to view your departments, roles, and employees. You'll also be able to add a department, role and employee, as well as edit employee information. 
 
-screencastify video link: https://watch.screencastify.com/v/4w6a491JYyJCHWLNAvia
+
+## Video Walkthrough
+Screencastify video link: https://watch.screencastify.com/v/4w6a491JYyJCHWLNAvia
+
+OR
+
+Google Drive video link: https://drive.google.com/file/d/11tn9uuvTt_VFb5GvvfZe8u-GXxWVGGWp/view
+
+## Screenshots
+<img width="313" alt="Screen Shot 2022-11-10 at 1 30 58 AM" src="https://user-images.githubusercontent.com/107009737/201017897-4a262e3b-fd2a-4c4e-8161-5100f18e78f9.png">
+
+<img width="369" alt="Screen Shot 2022-11-10 at 1 34 10 AM" src="https://user-images.githubusercontent.com/107009737/201017919-831dc275-ca34-400c-a134-cb123d9b845f.png">
 
 ## User Story
 AS A business owner
 I WANT to be able to view and manage the departments, roles, and employees in my company
 SO THAT I can organize and plan my business
+
+
 
 
 ## Acceptance Criteria
